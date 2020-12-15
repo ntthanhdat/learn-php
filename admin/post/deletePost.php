@@ -1,13 +1,6 @@
 <?php 
+include('../config.php');
 $id=$_GET['id'];
-
-
-
-// quy tinh 4 buoc:
-// b1 ket noi database server
-
-$conn=mysqli_connect('localhost','root','','music');
-
 if(!$conn){
     die("kết nối thất bại ".mysqli_connect_error());
 }
@@ -16,7 +9,7 @@ if(!$conn){
 //$sql="select * from baiviet";
 $sql="delete from baiviet where ma_bviet= '$id'";
 if(mysqli_query($conn,$sql)){
-    header("Location:index.php");
+    header("Location:../index.php");
 }
 
 ?>

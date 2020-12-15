@@ -1,8 +1,8 @@
 <?php
- include("header.php");
+ include("../header.php");
+include('../config.php');
 $id=$_GET['id'];
-require("config.php");
-$sql="select * from theloai where ma_tloai='$id'";
+$sql="select * from baiviet where ma_bviet='$id'";
 mysqli_set_charset($conn,'UTF8');
 $result=mysqli_query($conn,$sql);
 
@@ -16,7 +16,7 @@ $result=mysqli_query($conn,$sql);
 
     <div class="row">
         <div class="col-md-12">
-            <form action="process.php" method="post">
+            <form action="edit-topic-process.php" method="post">
             <div class="form-group">
                 <label for="">ma tl</label>
             <?php  echo  '<input type="text" name="id" id="" value="'.$post['ma_tloai'].'" >' ?>

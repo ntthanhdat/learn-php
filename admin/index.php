@@ -48,10 +48,7 @@ if(!$conn){
 }
 
 //buoc 2 khai bao truy van sql
-//$sql="select * from baiviet";
-$sql="select baiviet.ma_bviet, baiviet.tieude, tacgia.ten_tgia, baiviet.ngayviet, baiviet.ten_bhat, theloai.ten_tloai, baiviet.tomtat
-from baiviet, tacgia, theloai
- where tacgia.ma_tgia=baiviet.ma_tgia and theloai.ma_tloai=baiviet.ma_tloai";
+$sql="select * from baiviet";
  mysqli_set_charset($conn,'UTF8');
  $result=mysqli_query($conn,$sql);
 
@@ -73,7 +70,7 @@ from baiviet, tacgia, theloai
             <th>tieu de</th>
             <th>tenbaihat</th>
             <th>tac gia  </th>
-            <th>the loai </th>
+            <th>ma the loai </th>
             <th>sửa </th>
             <th>xóa </th>
         </tr>
@@ -88,8 +85,9 @@ foreach($post_list as $post){
             echo "<td> $post[4] </td>";
             echo "<td> $post[2] </td>";
             echo "<td> $post[5] </td>";
-            echo '<td> <a href="editPost.php?id='.$post[0].'"> <i class="far fa-edit"></i></td>';
-            echo '<td> <a href="deletePost.php?id='.$post[0].'"> <i class="fas fa-trash-alt"></i></td>';
+            echo "<td> $post[3] </td>";
+            echo '<td> <a href="post/editPost.php?id='.$post[0].'"> <i class="far fa-edit"></i></td>';
+            echo '<td> <a href="post/deletePost.php?id='.$post[0].'"> <i class="fas fa-trash-alt"></i></td>';
             
         echo '</tr>';
         

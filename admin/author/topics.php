@@ -41,12 +41,7 @@
 // quy tinh 4 buoc:
 // b1 ket noi database server
 
-$conn=mysqli_connect('localhost','root','','music');
-
-if(!$conn){
-    die("kết nối thất bại ".mysqli_connect_error());
-}
-
+include('../config.php');
 //buoc 2 khai bao truy van sql
 $sql="select * from theloai";
  mysqli_set_charset($conn,'UTF8');
@@ -66,8 +61,8 @@ $sql="select * from theloai";
 <table class="table">
     <thead>
         <tr>
-            <th>Mã the loai</th>
-            <th>the loai </th>
+            <th>Mã thể loại</th>
+            <th>thể loại </th>
             <th>sửa </th>
             <th>xóa </th>
         </tr>
@@ -79,8 +74,8 @@ foreach($post_list as $post){
         echo '<tr>';
             echo '<td scope="row"> '.$post[0].' </td>';
             echo "<td> $post[1] </td>";
-            echo '<td> <a href="edittopic.php?id='.$post[0].'"> <i class="far fa-edit"></i></td>';
-            echo '<td> <a href="deletePost.php?id='.$post[0].'"> <i class="fas fa-trash-alt"></i></td>';
+            echo '<td> <a href="edit-topic.php?id='.$post[0].'"> <i class="far fa-edit"></i></td>';
+            echo '<td> <a href="delete-topic.php?id='.$post[0].'"> <i class="fas fa-trash-alt"></i></td>';
             
         echo '</tr>';
         

@@ -1,17 +1,6 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <title>b4-na</title>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<?php include("header.php")
+ ?>
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
-</head>
-  <body>
-    s
       <?php
 
 // quy tinh 4 buoc:
@@ -22,18 +11,15 @@ $conn=mysqli_connect('localhost','root','','music');
 if(!$conn){
     die("kết nối thất bại ".mysqli_connect_error());
 }
-$id=$_GET['id'];
-
-
 
 //buoc 2 khai bao truy van sql
-$sql="select * from baiviet where id='$id'";
+$sql="select * from tacgia";
  mysqli_set_charset($conn,'UTF8');
  $result=mysqli_query($conn,$sql);
 
  //b3 xuly ketqua
  if(mysqli_num_rows($result)>0){
-     $post_list=mysqli_fetch_row($result);
+     $post_list=mysqli_fetch_all($result);
  }
 ?>
       <main class="container">
@@ -45,11 +31,10 @@ $sql="select * from baiviet where id='$id'";
 <table class="table">
     <thead>
         <tr>
-            <th>Mã bài viết</th>
-            <th>tieu de</th>
-            <th>tenbaihat</th>
-            <th>tac gia  </th>
-            <th>the loai </th>
+            <th>Mã tác giả </th>
+            <th>tác giả  </th>
+            <th>sửa </th>
+            <th>xóa </th>
         </tr>
     </thead>
     <tbody>
@@ -59,9 +44,8 @@ foreach($post_list as $post){
         echo '<tr>';
             echo '<td scope="row"> '.$post[0].' </td>';
             echo "<td> $post[1] </td>";
-            echo "<td> $post[4] </td>";
-            echo "<td> $post[2] </td>";
-            echo "<td> $post[5] </td>";
+            echo '<td> <a href="edit-author.php?id='.$post[0].'"> <i class="far fa-edit"></i></td>';
+            echo '<td> <a href="delete-author.php?id='.$post[0].'"> <i class="fas fa-trash-alt"></i></td>';
             
         echo '</tr>';
         
@@ -70,7 +54,6 @@ foreach($post_list as $post){
 ?>
     </tbody>
 </table>
-<button><a href="edit.php"></a></button>
 
 
 
