@@ -1,6 +1,6 @@
 <?php
- include("../header.php");
-include('../config.php');
+ include("../include/header.php");
+include('../include/config.php');
 $id=$_GET['id'];
 $sql="select * from baiviet where ma_bviet='$id'";
 mysqli_set_charset($conn,'UTF8');

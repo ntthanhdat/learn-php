@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="en">
   <head>
@@ -12,6 +11,7 @@
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 </head>
   <body>
+      <!-- navbar tao boi boostrap 4 -->
       <nav class="navbar navbar-expand-sm navbar-light bg-light">
           <a class="navbar-brand" href="#">Navbar</a>
           <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
@@ -21,13 +21,13 @@
           <div class="collapse navbar-collapse" id="collapsibleNavId">
               <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                   <li class="nav-item active">
-                      <a class="nav-link" href="index.php">QL bai viet <span class="sr-only">(current)</span></a>
+                      <a class="nav-link" href="<?php $_SERVER['DOCUMENT_ROOT'] ?>../post/post.php">QL bai viet <span class="sr-only">(current)</span></a>
                   </li>
                   <li class="nav-item">
-                      <a class="nav-link" href="tacgia.php">ql tac gia</a>
+                      <a class="nav-link" href="../author/author.php">ql tac gia</a>
                   </li>
                   <li class="nav-item">
-                      <a class="nav-link" href="theloai.php">ql the loai</a>
+                      <a class="nav-link" href="../topic/topics.php">ql the loai</a>
                   </li>
               </ul>
               <form class="form-inline my-2 my-lg-0">

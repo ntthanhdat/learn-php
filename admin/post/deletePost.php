@@ -1,5 +1,5 @@
 <?php 
-include('../config.php');
+include('../include/config.php');
 $id=$_GET['id'];
 if(!$conn){
     die("kết nối thất bại ".mysqli_connect_error());

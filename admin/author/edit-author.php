@@ -1,6 +1,6 @@
 <?php
- include("../header.php");
-include('../config.php');
+ include("../include/header.php");
+include('../include/config.php');
 $id=$_GET['id'];
 $sql="select * from tacgia where ma_tacgia='$id'";
 mysqli_set_charset($conn,'UTF8');

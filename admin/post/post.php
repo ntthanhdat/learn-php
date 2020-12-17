@@ -1,8 +1,5 @@
-<?php include("header.php")
- ?>
-
-      <?php
-
+<?php
+ include('../include/header.php');
 // quy tinh 4 buoc:
 // b1 ket noi database server
 
@@ -13,7 +10,7 @@ if(!$conn){
 }
 
 //buoc 2 khai bao truy van sql
-$sql="select * from tacgia";
+$sql="select * from baiviet";
  mysqli_set_charset($conn,'UTF8');
  $result=mysqli_query($conn,$sql);
 
@@ -31,8 +28,11 @@ $sql="select * from tacgia";
 <table class="table">
     <thead>
         <tr>
-            <th>Mã tác giả </th>
-            <th>tác giả  </th>
+            <th>Mã bài viết</th>
+            <th>tieu de</th>
+            <th>tenbaihat</th>
+            <th>tac gia  </th>
+            <th>ma the loai </th>
             <th>sửa </th>
             <th>xóa </th>
         </tr>
@@ -44,14 +44,23 @@ foreach($post_list as $post){
         echo '<tr>';
             echo '<td scope="row"> '.$post[0].' </td>';
             echo "<td> $post[1] </td>";
-            echo '<td> <a href="edit-author.php?id='.$post[0].'"> <i class="far fa-edit"></i></td>';
-            echo '<td> <a href="delete-author.php?id='.$post[0].'"> <i class="fas fa-trash-alt"></i></td>';
+            echo "<td> $post[4] </td>";
+            echo "<td> $post[2] </td>";
+            echo "<td> $post[5] </td>";
+            echo "<td> $post[3] </td>";
+            echo '<td> <a href="post/editPost.php?id='.$post[0].'"> <i class="far fa-edit"></i></td>';
+            echo '<td> <a href="post/deletePost.php?id='.$post[0].'"> <i class="fas fa-trash-alt"></i></td>';
             
         echo '</tr>';
         
-     //dong ket noi
+     
 }
+//dong ket noi
+mysqli_close($conn);
+
 ?>
+
+
     </tbody>
 </table>
 

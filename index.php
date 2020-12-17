@@ -62,9 +62,11 @@ foreach($post_list as $post){
      <div><span>tóm tắt </span><span><?php echo $post[6] ?>  </span></div>
      <hr>
 <?php
-     //dong ket noi
-     mysqli_close($conn);
+     
 }
+
+//dong ket noi
+mysqli_close($conn);
 ?>
  </div>;
  
