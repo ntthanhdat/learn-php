@@ -15,6 +15,12 @@ $sql="select * from theloai";
  }
 ?>
       <main class="container">
+      <div class="row addpost">
+              <?php 
+              $namae='topic';
+              include('../include/button.php');
+              ?>
+          </div>
           <div class="row">
               <div class="col-md-12">
               

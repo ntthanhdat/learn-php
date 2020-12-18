@@ -1,0 +1,28 @@
+.addpost{
+    float: right;
+    margin: 16px;
+}
+.addpost-btn{
+    border: 1px solid rgb(165, 165, 165);
+    background-color: #f8f9fa;
+    text-align: center;
+    
+}
+.addpost  button a {
+    color: #000;
+    text-decoration: none;
+}
+.addpost-btn:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  
+}
+#panel, #flip {
+    padding: 5px;
+    text-align: center;
+    border: solid 1px #c3c3c3;
+  }
+  
+#panel {
+padding: 50px;
+display: none;
+}
