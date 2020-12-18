@@ -6,14 +6,14 @@ include('../include/config.php');
 
 <div class="row">
     <div class="col-md-12">
-        <form action="add-topic-process.php" method="post">
+        <form action="add-author-process.php" method="post">
         <div class="form-group">
-            <label for="">ma tl</label>
+            <label for="">Mã tác giả</label>
         <?php  echo  '<input type="text" name="id" id="" value="" >' ?>
         </div>
         <div class="form-group">
-            <label for=""> tl</label>
-        <?php  echo  '<input type="text" name="tloai" id="" value="">' ?>
+            <label for="">Tên tác giả</label>
+        <?php  echo  '<input type="text" name="name" id="" value="">' ?>
         </div>
         <div class="form-group">
             <input type="submit" value="Submit">

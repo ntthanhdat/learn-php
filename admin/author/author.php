@@ -20,6 +20,12 @@ $sql="select * from tacgia";
  }
 ?>
       <main class="container">
+      <div class="row addpost">
+              <?php 
+              $namae='author';
+              include('../include/button.php');
+              ?>
+          </div>
           <div class="row">
               <div class="col-md-12">
               
