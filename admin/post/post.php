@@ -28,6 +28,7 @@ $sql="select ma_bviet, tieude, ten_bhat, ten_tloai, tomtat, ten_tgia, baiviet fr
           </div>
           <div class="row">
                <div class="col-md-12">
+                   
                     <table class="table">
                         <thead>
                             <tr>
@@ -52,12 +53,12 @@ $sql="select ma_bviet, tieude, ten_bhat, ten_tloai, tomtat, ten_tgia, baiviet fr
                                     echo "<td> $post[3] </td>";
                                     echo "<td> $post[4] </td>";
                                     echo "<td> $post[5] </td>";
-                                    echo '<td id="flip"> <ion-icon src="../../icon/chevron-down-outline.svg"  ></ion-icon> </td>';
+                                    echo '<td class="collapsible"> <ion-icon src="../../icon/chevron-down-outline.svg"  ></ion-icon> </td>';
                                     echo '<td> <a href="edit-post.php?id='.$post[0].'"> <i class="far fa-edit"></i></td>';
                                     echo '<td> <a href="delete-post.php?id='.$post[0].'"> <i class="fas fa-trash-alt"></i></td>';
                                 echo '</tr>';
 
-                                echo '<tr id="panel">';
+                                echo '<tr class="content" id="content">';
                                     echo'<td >'.$post[6].'</td>';
                                 echo '</tr>';
                             }
@@ -70,6 +71,22 @@ $sql="select ma_bviet, tieude, ten_bhat, ten_tloai, tomtat, ten_tgia, baiviet fr
           </div>
           
       </main>
+      <script>
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = document.getElementById("content").lastChild.innerHTML;
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  });
+}
+</script>
       <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

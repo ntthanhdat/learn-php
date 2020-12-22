@@ -12,15 +12,8 @@
     <link rel="stylesheet" href="../../css/style.css">
     <!-- jquery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script> 
-    $(document).ready(function(){
-  $("#flip").click(function(){
-    $("#panel").slideToggle("slow");
-  });
-});
-
     
-    </script>
+    
 </head>
   <body>
       <!-- navbar tao boi boostrap 4 -->

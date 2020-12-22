@@ -16,13 +16,29 @@
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   
 }
-#panel, #flip {
-    padding: 5px;
-    text-align: center;
-    border: solid 1px #c3c3c3;
+/* Style the button that is used to open and close the collapsible content */
+
+
+.collapsible {
+    color: #444;
+    cursor: pointer;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
   }
   
-#panel {
-padding: 50px;
-display: none;
-}
+  /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+  .active, .collapsible:hover {
+    color: rgb(111, 49, 228);
+  }
+  
+  /* Style the collapsible content. Note: hidden by default */
+  .content {
+    padding: 0 18px;
+    display: none;
+    overflow: hidden;
+  }
+  .nav {
+    float: right;
+  }
